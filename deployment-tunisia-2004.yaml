@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tunisia-2004-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tunisia-2004
+  template:
+    metadata:
+      labels:
+        app: tunisia-2004
+    spec:
+      containers:
+        - name: tunisia-2004-container
+          image: karim10/tunisia-2004:latest
+          ports:
+            - containerPort: 80
